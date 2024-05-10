@@ -27,6 +27,9 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew :application:build
 
+      - name: Run Unit Tests
+        run: ./gradlew :application:test
+
       - if: ${{ github.ref == 'refs/heads/main' }}
         name: Build and Publish Docker Image
         run: |
